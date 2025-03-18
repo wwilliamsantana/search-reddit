@@ -9,12 +9,17 @@ interface RedditContextProviderProps {
 }
 
 export function RedditContextProvider({ children }: RedditContextProviderProps) {
-  const [data, setData] = useState()
+  const [data, setData] = useState<any>()
 
+  function searchData() {
+    const data = fetch(`https://www.reddit.com/r/carros.json`)
+    data.then(data => data.json()).then(data => setData(data))
+  }
 
+  searchData()
 
   return (
-    <RedditContext.Provider value={ }>
+    <RedditContext.Provider value={data}>
       {children}
     </RedditContext.Provider>
   )

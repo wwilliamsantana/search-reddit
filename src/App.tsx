@@ -2,7 +2,7 @@ import ContainerCards from "./components/ContainerCards"
 import Header from "./components/Header"
 
 
-function App() {
+export function App() {
   return (
     <main className="font-[family-name:--font-open] min-w-full ">
       <Header />
@@ -11,5 +11,3 @@ function App() {
     </main>
   )
 }
-
-export default App
